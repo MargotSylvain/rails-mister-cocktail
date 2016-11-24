@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   #   resources :ingredients
   # end
 
-  resources :cocktails
-  root 'cocktails#index'
+  # resources :cocktails do
+  #   resources :ingredients, only: [:new, :create]
+  # end
 
-  # get "cocktails", to: "cocktails#index"
+  # root 'cocktails#index'
+
+  # # get "cocktails", to: "cocktails#index"
 
 end

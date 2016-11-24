@@ -15,3 +15,7 @@ Cocktail.destroy_all
 Cocktail.create(name: "Mint Julep")
 Cocktail.create(name: "Whisky sour")
 Cocktail.create(name: "Mojito")
+
+Dose.destroy_all
+Dose.create(cocktail: "Mint Julep", ingredient: "mint leaves" , description: "6")
+Dose.create(cocktail: "Mojito", ingredient: "lemon" , description: "6cl")
