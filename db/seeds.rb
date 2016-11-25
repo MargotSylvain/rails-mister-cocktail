@@ -19,10 +19,10 @@ Ingredient.create( name: "sparkling water")
 
 
 Cocktail.destroy_all
-MintJulep = Cocktail.create( name: "Mint Julep")
-Cocktail.create( name: "Whisky sour")
-Mojito = Cocktail.create( name: "Mojito")
+MintJulep = Cocktail.create( name: "Mint Julep", remote_photo_url: "http://punchdrink.com/wp-content/uploads/2013/09/MintJulep.jpg")
+Cocktail.create( name: "Whisky sour", remote_photo_url: "http://www.carolinaheritageco.com/wp-content/uploads/2014/07/Jim-Beam-Bourbon-Whiskey-Sour.jpg")
+Mojito = Cocktail.create( name: "Mojito", remote_photo_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTdVYlA2iLCpBGiucUN6KYQGuJWPH8EcDZShNx1-LqZIcs9ZqgONg")
 
 Dose.destroy_all
 Dose.create(cocktail: MintJulep, ingredient: Mint , description: "6")
-Dose.create(id: 2, cocktail: Mojito, ingredient: ice , description: "6cl")
+Dose.create(cocktail: Mojito, ingredient: ice , description: "6cl")

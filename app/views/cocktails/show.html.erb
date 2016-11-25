@@ -16,27 +16,23 @@
 
   <div class="row">
     <div class="title col-xs-12 text-center">
-      <h2><%= @cocktail.name %></h2>
+  <h2><%= @cocktail.name %></h2>
     </div>
   </div>
 
+<div class="ingredients col-xs-6 col-xs-offset-3" >
   <div class="row">
-    <div class="ingredients col-xs-6 col-xs-offset-3">
-      <p>List of ingredients:</p>
+    <p>List of ingredients:</p>
       <ul>
       <% @cocktail.doses.each do |dose| %>
-      <% if dose.persisted?%>
-      <%= dose.description %>, <%= dose.ingredient.name %>
-      <%= link_to 'destroy', dose_path(dose), method: :delete %>
-      <% end %>
+        <% if dose.persisted?%>
+          <%= dose.description %>, <%= dose.ingredient.name %>
+          <%= link_to 'destroy', dose_path(dose), method: :delete %>
+        <% end %>
       <% end %>
       </ul>
-    </div>
   </div>
-
-
-<div class="row">
-  <div class="doses col-xs-6 col-xs-offset-3">
+  <div class="row">
     <p>Add a dose</p>
     <%= render 'doses/form' %>
     <p><%=link_to "Back to all cocktails", root_path %></p>
