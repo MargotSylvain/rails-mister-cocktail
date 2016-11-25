@@ -2,3 +2,26 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+body{
+}
+
+h1{
+  font-size: $header-font;
+  text-align: center;
+}
+
+a {
+  flex: 0 0 auto;
+  padding: auto;
+  color: white;
+  font-size: 15px;
+}
+
+.title{
+  color: red;
+}
+
+.title a{
+  color: red;
+}

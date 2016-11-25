@@ -1,14 +1,61 @@
-<h3><%= @cocktail.name %></h2>
-<p>List of ingredients:</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsYelpMvp</title>
+  <%= csrf_meta_tags %>
 
-<ul>
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.description %>, <%= dose.ingredient.name %>
-    <%= link_to 'destroy', dose_path(dose), method: :delete %>
-  </li>
-<% end %>
-</ul>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
 
-<h2>Add a dose</h2>
-<%= render 'doses/form' %>
+<body>
+  <%= render "shared/navbar" %>
+
+  <div class="row">
+    <div class="title col-xs-12 text-center">
+      <h2><%= @cocktail.name %></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="ingredients col-xs-6 col-xs-offset-3">
+      <p>List of ingredients:</p>
+      <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <% if dose.persisted?%>
+      <%= dose.description %>, <%= dose.ingredient.name %>
+      <%= link_to 'destroy', dose_path(dose), method: :delete %>
+      <% end %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="row">
+  <div class="doses col-xs-6 col-xs-offset-3">
+    <p>Add a dose</p>
+    <%= render 'doses/form' %>
+    <p><%=link_to "Back to all cocktails", root_path %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="title col-xs-12 text-center">
+    <p><%=link_to "Back to all cocktails", root_path %></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
