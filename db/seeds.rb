@@ -7,15 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Ingredient.destroy_all
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Ingredient.create( name: "lemon")
+ice = Ingredient.create( name: "ice")
+Mint = Ingredient.create( name: "mint leaves")
+Ingredient.create( name: "rum")
+Ingredient.create( name: "whisky")
+Ingredient.create( name: "sour")
+Ingredient.create( name: "lime")
+Ingredient.create( name: "sugar cane syrup")
+Ingredient.create( name: "sparkling water")
+
 
 Cocktail.destroy_all
-Cocktail.create(name: "Mint Julep")
-Cocktail.create(name: "Whisky sour")
-Cocktail.create(name: "Mojito")
+MintJulep = Cocktail.create( name: "Mint Julep")
+Cocktail.create( name: "Whisky sour")
+Mojito = Cocktail.create( name: "Mojito")
 
 Dose.destroy_all
-Dose.create(cocktail: "Mint Julep", ingredient: "mint leaves" , description: "6")
-Dose.create(cocktail: "Mojito", ingredient: "lemon" , description: "6cl")
+Dose.create(cocktail: MintJulep, ingredient: Mint , description: "6")
+Dose.create(id: 2, cocktail: Mojito, ingredient: ice , description: "6cl")

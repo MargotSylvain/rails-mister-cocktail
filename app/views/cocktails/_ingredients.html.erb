@@ -1,6 +1,4 @@
-<h3>Ingredients</h3>
-<%@cocktail.ingredients.each do |ingredient|%>
-<%= hello %>
-<%end%>
-
+<% @cocktail.doses.each do |dose|%>
+<p><%= dose.ingredient.name %> - Qty: <%= dose.description %></p>
+<% end %>
 
